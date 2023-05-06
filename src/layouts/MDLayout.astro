@@ -1,29 +1,18 @@
 ---
 const { frontmatter } = Astro.props;
-const PrimaryColor = Astro.props.PrimaryColor;
 import BasicLayout from "../layouts/BasicLayout.astro";
+import Top from "../components/Top.astro"
 ---
-<style define:vars={{ PrimaryColor }}>
-	.top {
-		background-color: rgb(255 157 208);
-		width: 100vw;
-	}
-	.subtitle {
-		width: 100%;
-		color: black;
-		padding-top: 8rem;
-		padding-bottom: 8rem;
-		font-weight: bold;
-		font-family: sans-serif;
-		font-style: italic;
-		font-size: 3rem;
-		text-align: center;
-	}
-</style>
 
 <BasicLayout>
-	<div class="top">
-		<h1 class="subtitle">{frontmatter.subtitle}</h1>
+	<Top text={frontmatter.subtitle} color={frontmatter.PrimaryColor}/>
+	<div class="MainBody">
+		<div class="intro">
+			<img src={frontmatter.image.url} alt={frontmatter.image.alt}/>
+		</div>
+		<div class="MainBody">
+			<slot />
+		</div>
 	</div>
 </BasicLayout>
 

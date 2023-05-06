@@ -1,0 +1,26 @@
+---
+const { text } = Astro.props;
+const { color } = Astro.props;
+---
+
+<div class="top">
+    <h1 class="subtitle">{text}</h1>
+</div>
+
+<style define:vars={{ color }}>
+    .top {
+        background-color: var(--color);
+        width: 100%;
+    }
+    .subtitle {
+        width: 100%;
+        color: black;
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+        font-weight: bold;
+        font-family: sans-serif;
+        font-style: italic;
+        font-size: 3rem;
+        text-align: center;
+    }
+</style>
