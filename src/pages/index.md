@@ -8,7 +8,7 @@ image:
     alt: 'The MaebeeTV logo.'
     width: "400"
     height: "400"
-layout: ../layouts/HomeLayout.astro
+layout: ../layouts/HomePage.astro
 path: "/"
 ---
 <h1 class="serif">Welcome to MaebeeTV!</h1>
