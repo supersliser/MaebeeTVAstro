@@ -2,9 +2,9 @@
 const { frontmatter } = Astro.props;
 const primaryColour = frontmatter.PrimaryColor;
 const textColour = frontmatter.NavTextColor;
-const allMainPages = await Astro.glob("../pages/*.md");
-const AllFilms = await Astro.glob("../pages/films/*.md");
-const AllProjects = await Astro.glob("../pages/projects/*.md");
+const allMainPages = await Astro.glob("src/pages/*.md");
+const AllFilms = await Astro.glob("src/pages/films/*.md");
+const AllProjects = await Astro.glob("src/pages/projects/*.md");
 ---
 
 <style define:vars={{ primaryColour, textColour }}>
