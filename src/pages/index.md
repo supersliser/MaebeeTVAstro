@@ -4,7 +4,7 @@ subtitle: 'Changing the world, one story at a time'
 PrimaryColor: "#ff9dd0"
 NavTextColor: "#000000"
 image:
-    url: "src/images/Logo.gif"
+    url: "https://media.discordapp.net/attachments/903265431396179978/977713498090008606/MaebeeTV-logos.jpeg?width=810&height=810"
     alt: 'The MaebeeTV logo.'
     width: "400"
     height: "400"
