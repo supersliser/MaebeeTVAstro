@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@fontsource/abeezee": "^4.5.10",
+    "@fontsource/abyssinica-sil": "^4.5.2",
+    "@fontsource/actor": "^4.5.9",
     "astro": "^2.4.1"
   }
 }

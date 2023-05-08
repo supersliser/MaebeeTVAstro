@@ -1,6 +1,7 @@
 ---
-const { pageTitle } = Astro.props;
+const { frontmatter } = Astro.props;
 import "../styles/basic.css";
+import Nav from "../components/NavBar.astro";
 ---
 <html lang="en">
 	<head>
@@ -8,9 +9,10 @@ import "../styles/basic.css";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle} - MaebeeTV</title>
+		<title>{frontmatter.title} - MaebeeTV</title>
 	</head>
 	<body>
+		<Nav frontmatter = {frontmatter} />
         <slot />
 	</body>
 </html>

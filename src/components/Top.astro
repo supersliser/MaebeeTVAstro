@@ -1,26 +1,20 @@
 ---
 const { text } = Astro.props;
 const { color } = Astro.props;
+import "../styles/basic.css";
 ---
 
 <div class="top">
-    <h1 class="subtitle">{text}</h1>
+    <h1 class="subtitle sansSerif">{text}</h1>
 </div>
 
 <style define:vars={{ color }}>
     .top {
+        position: static;
+        margin-top: -0.5rem;
         background-color: var(--color);
-        width: 100%;
-    }
-    .subtitle {
-        width: 100%;
-        color: black;
-        padding-top: 8rem;
-        padding-bottom: 8rem;
-        font-weight: bold;
-        font-family: sans-serif;
-        font-style: italic;
-        font-size: 3rem;
-        text-align: center;
+        width: 101%;
+        overflow: hidden;
+        margin-left: -0.5rem;
     }
 </style>

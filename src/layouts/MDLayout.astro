@@ -1,19 +1,23 @@
 ---
 const { frontmatter } = Astro.props;
 import BasicLayout from "../layouts/BasicLayout.astro";
-import Top from "../components/Top.astro"
+import Top from "../components/Top.astro";
 ---
 
-<BasicLayout>
-	<Top text={frontmatter.subtitle} color={frontmatter.PrimaryColor}/>
-	<div class="MainBody">
-		<div class="intro">
-			<img src={frontmatter.image.url} alt={frontmatter.image.alt}/>
-		</div>
-		<div class="MainBody">
-			<slot />
+<BasicLayout frontmatter={frontmatter}>
+	<Top text={frontmatter.subtitle} color={frontmatter.PrimaryColor} />
+	<div class="MainBody smallGapFlex">
+		<div class="text">
+			<img
+				class="text"
+				src={frontmatter.image.url}
+				alt={frontmatter.image.alt}
+				width={frontmatter.image.width}
+				height={frontmatter.image.height}
+			/>
+			<div class="smallGapFlex width">
+				<slot />
+			</div>
 		</div>
 	</div>
 </BasicLayout>
-
-
