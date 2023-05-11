@@ -118,15 +118,16 @@ const AllProjects = await Astro.glob("../pages/projects/*.md");
             <p class="serif">MaebeeTV Productions</p>
         </a>
         <ul>
-            {
-                allMainPages.map((post) => (
                     <li>
-                        <a href={post.frontmatter.path}>
-                            {post.frontmatter.title}
+                        <a href="/">
+                            Home
                         </a>
                     </li>
-                ))
-            }
+                    <li>
+                        <a href="/about">
+                            About
+                        </a>
+                    </li>
             <li class="dropdown">
                 <a class="dropbtn" href="javascript:void(0)">
                     Films
@@ -178,6 +179,11 @@ const AllProjects = await Astro.glob("../pages/projects/*.md");
                         ))
                     }
                 </div>
+            </li>
+            <li>
+                <a href="/privacypolicy">
+                    Privacy Policy
+                </a>
             </li>
         </ul>
     </div>
