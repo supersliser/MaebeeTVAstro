@@ -6,7 +6,7 @@ NavTextColor: "#000000"
 layout: ../layouts/CopyLayout.astro
 path: "/privacypolicy"
 ---
-<p class="serif p">At Maebeetv.com, we are committed to protecting the privacy and security of our users. This Privacy Policy explains how we collect, use, and disclose personal information that we may receive when you use our website.
+At Maebeetv.com, we are committed to protecting the privacy and security of our users. This Privacy Policy explains how we collect, use, and disclose personal information that we may receive when you use our website.
 
 Cookies and Personalized Advertising
 
@@ -31,4 +31,4 @@ We may update this Privacy Policy from time to time, and we will post the update
 
 Contact Us
 
-If you have any questions or concerns about this Privacy Policy, please contact us at contactmaebeeproductions@gmail.com.</p>
+If you have any questions or concerns about this Privacy Policy, please contact us at contactmaebeeproductions@gmail.com.
