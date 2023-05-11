@@ -11,5 +11,6 @@ image:
 layout: ../layouts/HomePage.astro
 path: "/"
 ---
+export const prerender = true;
 <h1 class="serif">Welcome to MaebeeTV!</h1>
 <p class="serif">We are a movie production company that strives to change the way stories are told.<p>
