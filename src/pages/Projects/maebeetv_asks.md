@@ -12,5 +12,4 @@ layout: ../../layouts/ProjectPreview.astro
 link: "https://www.youtube.com/embed/r_fWFDubP_Q"
 path: "/projects/maebeetv_asks"
 ---
-export const prerender = true;
 <p class="sansSerif project">MaebeeTV Asks is a webseries with nine episodes that educates people about society and dispels common misunderstandings regarding the LGBT community.<p>
