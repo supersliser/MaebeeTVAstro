@@ -1,0 +1,26 @@
+---
+const { frontmatter } = Astro.props;
+const images = frontmatter.images;
+---
+
+<style>
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        justify-items: baseline;
+    }
+    .gallery img {
+        max-width: 200px;
+        max-height: 200px;
+    }
+</style>
+
+<div class="gallery">
+    {
+        images.map((post) => (
+            <img src={post} alt="picture"/>
+        ))
+    }
+</div>
