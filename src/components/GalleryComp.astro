@@ -1,0 +1,62 @@
+---
+const { frontmatter } = Astro.props;
+const images1 = [];
+const images2 = [];
+const images3 = [];
+const images4 = [];
+
+for (var i = 0; i < frontmatter.images.length; i++)
+{
+    if (i % 4 == 0)
+    {
+        images1[i] = frontmatter.images[i];
+    }
+    if (i % 4 == 1)
+    {
+        images2[i] = frontmatter.images[i];
+    }
+    if (i % 4 == 2)
+    {
+        images3[i] = frontmatter.images[i];
+    }
+    if (i % 4 == 3)
+    {
+        images4[i] = frontmatter.images[i];
+    }
+}
+---
+
+<style>
+    .gallery {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+    .gallery img {
+        max-width: 500px;
+        max-height: 800px;
+    }
+    .column {
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+
+<div class="gallery">
+    <div class="column">
+        {images1.map((post) => <img src={post} alt="picture" />)}
+    </div>
+    <div class="column">
+        {images2.map((post) => <img src={post} alt="picture" />)}
+    </div>
+    <div class="column">
+        {images3.map((post) => <img src={post} alt="picture" />)}
+    </div>
+    <div class="column">
+        {images4.map((post) => <img src={post} alt="picture" />)}
+    </div>
+</div>

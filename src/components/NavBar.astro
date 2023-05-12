@@ -5,6 +5,7 @@ const textColour = frontmatter.NavTextColor;
 const allMainPages = await Astro.glob("../pages/*.md");
 const AllFilms = await Astro.glob("../pages/films/*.md");
 const AllProjects = await Astro.glob("../pages/projects/*.md");
+const AllOther = await Astro.glob("../pages/other/*.md");
 ---
 
 <style define:vars={{ primaryColour, textColour }}>
@@ -180,10 +181,31 @@ const AllProjects = await Astro.glob("../pages/projects/*.md");
                     }
                 </div>
             </li>
-            <li>
-                <a href="/privacypolicy">
-                    Privacy Policy
+            <li class="dropdown">
+                <a class="dropbtn" href="javascript:void(0)">
+                    Other fun stuff
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="w-6 h-6"
+                        width="12px"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
+                            clip-rule="evenodd"></path>
+                    </svg>
                 </a>
+                <div class="dropdown-content">
+                    {
+                        AllOther.map((post) => (
+                            <a href={post.frontmatter.path}>
+                                {post.frontmatter.title}
+                            </a>
+                        ))
+                    }
+                </div>
             </li>
         </ul>
     </div>
