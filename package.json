@@ -10,10 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^3.3.0",
+    "@astrojs/vercel": "^3.4.0",
     "@fontsource/abeezee": "^4.5.10",
     "@fontsource/abyssinica-sil": "^4.5.2",
     "@fontsource/actor": "^4.5.9",
-    "astro": "^2.4.5"
+    "@fontsource/boogaloo": "^4.5.10",
+    "@fontsource/brygada-1918": "^4.5.13",
+    "astro": "^2.5.1"
   }
 }

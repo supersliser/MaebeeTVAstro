@@ -1,0 +1,21 @@
+---
+const { frontmatter } = Astro.props;
+import "../styles/basic.css";
+import Nav from "../components/NavBarKids.astro";
+export const prerender = true;
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="https://media.discordapp.net/attachments/903265431396179978/977713498090008606/MaebeeTV-logos.jpeg?width=810&height=810" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{frontmatter.title} - MaebeeTV Kids</title>
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3417864629803378"
+     crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<Nav frontmatter = {frontmatter} />
+        <slot />
+	</body>
+</html>

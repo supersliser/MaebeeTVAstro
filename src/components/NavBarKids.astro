@@ -1,22 +1,15 @@
 ---
-const { PrimaryColor, NavTextColor } = Astro.props;
-const primaryColour = PrimaryColor;
-const textColour = NavTextColor;
-const AllFilms = await fetch("https://api.npoint.io/f2948809e44e0dab1ee3").then(
-    (response) => response.json()
-);
-const AllProjects = await fetch(
-    "https://api.npoint.io/610b9bb2a97b2e3a797f"
-).then((response) => response.json());
-for (var i = 0; i < AllProjects.pages.length; i++) {
-    AllProjects.pages[i].glob = "../projects/" + AllProjects.pages[i].glob;
-}
-for (var i = 0; i < AllFilms.pages.length; i++) {
-    AllFilms.pages[i].glob = "../films/" + AllFilms.pages[i].glob;
-}
+const { frontmatter } = Astro.props;
+const primaryColour = frontmatter.PrimaryColor;
+const textColour = frontmatter.NavTextColor;
+const allMainPages = await Astro.glob("../pages/*.md");
+const AllFilms = await Astro.glob("../pages/films/*.md");
+const AllProjects = await Astro.glob("../pages/projects/*.md");
+const AllOther = await Astro.glob("../pages/other/*.md");
 ---
 
 <style define:vars={{ primaryColour, textColour }}>
+import "@fontsource/boogaloo"
     nav {
         background-color: var(--primaryColour);
         position: fixed;
@@ -75,7 +68,7 @@ for (var i = 0; i < AllFilms.pages.length; i++) {
     .dropdown-content {
         display: none;
         position: absolute;
-        background-color: var(--primaryColour);
+        background-color: transparent;
         min-width: 160px;
         max-width: 200px;
         height: fit-content;
@@ -119,6 +112,12 @@ for (var i = 0; i < AllFilms.pages.length; i++) {
         padding: 0;
         color: var(--textColour);
     }
+
+    p.kids {
+        font-size: 2rem;
+        text-decoration: solid;
+        font-family: "Boogaloo", cursive;
+    }
 </style>
 <nav>
     <div>
@@ -129,13 +128,14 @@ for (var i = 0; i < AllFilms.pages.length; i++) {
                 src="https://cdn.discordapp.com/attachments/903265431396179978/977713498090008606/MaebeeTV-logos.jpeg"
             />
             <p class="serif">MaebeeTV Productions</p>
+            <p class="kids">Kids</p>
         </a>
         <ul>
             <li>
                 <a href="/"> Home</a>
             </li>
             <li>
-                <a href="/about">About</a>
+                <a href="/about"> About</a>
             </li>
             <li class="dropdown">
                 <a class="dropbtn" href="javascript:void(0)">
@@ -155,8 +155,10 @@ for (var i = 0; i < AllFilms.pages.length; i++) {
                 </a>
                 <div class="dropdown-content">
                     {
-                        AllFilms.pages.map((post) => (
-                            <a href={post.glob}>{post.title}</a>
+                        AllFilms.map((post) => (
+                            <a href={post.frontmatter.url}>
+                                {post.frontmatter.title}
+                            </a>
                         ))
                     }
                 </div>
@@ -179,8 +181,10 @@ for (var i = 0; i < AllFilms.pages.length; i++) {
                 </a>
                 <div class="dropdown-content">
                     {
-                        AllProjects.pages.map((post) => (
-                            <a href={post.glob}>{post.title}</a>
+                        AllProjects.map((post) => (
+                            <a href={post.frontmatter.url}>
+                                {post.frontmatter.title}
+                            </a>
                         ))
                     }
                 </div>
@@ -202,7 +206,13 @@ for (var i = 0; i < AllFilms.pages.length; i++) {
                     </svg>
                 </a>
                 <div class="dropdown-content">
-                    <a href="/other/🐸">🐸</a>
+                    {
+                        AllOther.map((post) => (
+                            <a href={post.frontmatter.url}>
+                                {post.frontmatter.title}
+                            </a>
+                        ))
+                    }
                 </div>
             </li>
         </ul>

@@ -4,7 +4,7 @@ subtitle: 'Our Privacy Policy'
 PrimaryColor: "#ff9dd0"
 NavTextColor: "#000000"
 layout: ../../layouts/CopyLayout.astro
-path: "/other/privacypolicy"
+url: "/other/privacypolicy"
 ---
 
 

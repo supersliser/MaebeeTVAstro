@@ -1,27 +1,27 @@
 ---
-const { frontmatter } = Astro.props;
+const { images } = Astro.props;
 const images1 = [];
 const images2 = [];
 const images3 = [];
 const images4 = [];
 
-for (var i = 0; i < frontmatter.images.length; i++)
+for (var i = 0; i < images.length; i++)
 {
     if (i % 4 == 0)
     {
-        images1[i] = frontmatter.images[i];
+        images1[i] = images[i];
     }
     if (i % 4 == 1)
     {
-        images2[i] = frontmatter.images[i];
+        images2[i] = images[i];
     }
     if (i % 4 == 2)
     {
-        images3[i] = frontmatter.images[i];
+        images3[i] = images[i];
     }
     if (i % 4 == 3)
     {
-        images4[i] = frontmatter.images[i];
+        images4[i] = images[i];
     }
 }
 ---

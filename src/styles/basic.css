@@ -1,125 +1,56 @@
+@import "@fontsource/brygada-1918";
+@import "@fontsource/actor";
 html {
     background-color: #090909;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    color: white;
 }
-
-h1,
-h2 {
+h1 {
     color: #fb923c;
     font-weight: 800;
-}
-
-h1 {
     font-size: 3.75rem;
-    line-height: 1;
     text-align: center;
 }
-
-h1.sansSerif, h3.sansSerif {
+p {
+    text-align: center;
+}
+.serif {
+    font-family: "Brygada 1918", serif;
+}
+.sans {
     font-family: "Actor", sans-serif;
 }
-
-h1.serif, h3.serif, p.serif {
-    font-family: "Abyssinica SIL", serif;
+div.vertical {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
-
-p.sansSerif {
-    font-family: "AbeeZee", sans-serif;
-}
-
-p {
-    text-align: right;
+div.vertical p {
     font-size: 1.5rem;
-    line-height: 2rem;
-    color: white;
-    margin-top: -5%;
+}
+div.horizontal {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+.double {
+    width: 25%;
+}
+.main {
+    width: 90%;
     margin-left: 5%;
     margin-right: 5%;
 }
-
-p.p {
-    text-align: center;
-    font-size: 1rem;
-    line-height: 2rem;
-    color: white;
-    margin-top: 0%;
+.marginTop {
+    margin-top: 10%;
 }
-
-div.p {
-    max-width: 42rem;
-    display: flex;
-    justify-content: space-around;
-    margin:auto;
-    align-items: center;
-    flex-direction: column;
+.marginTop2 {
+    margin-top: 20%;
 }
-
-.project {
-    text-align: center;
-    font-size: 2.25rem;
-    line-height: 2.75rem;
-    color: white;
-    width: 40%;
-}
-
-iframe.p {
-    min-width: 100%;
-    height: 75vh;
-    background: transparent;
-    border: none;
-}
-
-.subtitle {
-    width: 100%;
-    color: black;
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 3rem;
-    text-align: center;
-}
-
-.mainbody {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
-}
-
-.smallGapFlex {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.width{
-    width: 60%;
-}
-
-div.text {
-    display: flex;
-    gap: 8rem;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    flex-direction: row;
-    align-self: center;
-    min-height: 65vh;
-    width: 100%;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-    padding: 1.75rem;
-}
-
-img.text {
-    display: inline;
-    min-width: 150px;
+.seventyFive {
+    width: 65%;
 }
