@@ -1,6 +1,10 @@
 ---
 const { title, subtitle, PrimaryColor, NavTextColor, link, text } = Astro.params;
-
+export function getStaticPaths() {
+  return [
+    {params: {title: "MaebeeTV Asks"}},
+  ];
+}
 import BasicLayout from "../../layouts/BasicLayout.astro";
 ---
 
@@ -19,7 +23,7 @@ import BasicLayout from "../../layouts/BasicLayout.astro";
       ></iframe>
   </div>
     <div>
-      <p class="serif project">{text}</p>
+      <p class="serif project">{text[0]}<lb />{text[1]}</p>
     </div>
 	</div>
 </BasicLayout>
