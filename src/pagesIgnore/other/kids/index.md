@@ -1,6 +1,6 @@
 ---
 title: 'Home'
-subtitle: 'Changing the world, one story at a time'
+subtitle: 'Kids Home'
 PrimaryColor: "#ff9dd0"
 NavTextColor: "#000000"
 image:
@@ -8,8 +8,8 @@ image:
     alt: 'The MaebeeTV logo.'
     width: "400"
     height: "400"
-layout: ../layouts/HomePage.astro
-path: "/"
+layout: ../../../layouts/BasicKidsLayout.astro
+url: "/other/kids/"
 ---
 <h1 class="serif">Welcome to MaebeeTV!</h1>
 <p class="serif">We are a movie production company that strives to change the way stories are told.<p>

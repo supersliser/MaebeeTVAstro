@@ -1,0 +1,59 @@
+---
+import BasicLayout from "../layouts/BasicLayout.astro";
+const title = "Home";
+const subtitle = "Changing the world, one story at a time";
+const PrimaryColor = "#ff9dd0";
+const NavTextColor = "#000000";
+import "../styles/basic.css";
+---
+
+<BasicLayout
+	title={title}
+	subtitle={subtitle}
+	PrimaryColor={PrimaryColor}
+	NavTextColor={NavTextColor}
+>
+	<div class="vertical main marginTop">
+		<div class="horizontal">
+			<div class="double">
+				<img
+					src="https://media.discordapp.net/attachments/903265431396179978/977713498090008606/MaebeeTV-logos.jpeg"
+					alt="The MaebeeTV logo."
+					width="400px"
+					height="400px"
+				/>
+			</div>
+			<div class="vertical double">
+				<h1 class="serif">Welcome to MaebeeTV!</h1>
+				<p class="serif">
+					We are a movie production company that strives to change the
+					way stories are told.<p></p>
+				</p>
+			</div>
+		</div>
+		<div class="vertical marginTop2">
+			<h1 class="serif">Want to join our team?</h1>
+			<p class="serif">
+				Our company is commited to providing safe and friendly
+				environments that can ensure the highest quality productions are
+				created. Our films are made as a single team, with smaller
+				groups assigned based on your own unique talents and quirks.
+				Each team is given important tasks with flexible deadlines, all
+				in the spirit of raising awareness and encouraging others to
+				share their stories.
+			</p>
+			<iframe
+				src="https://docs.google.com/forms/d/e/1FAIpQLSdaBYNVmnUodH3BqEIymy7LIrWOhiGqPkH2OF0i-wPWj-YkQA/viewform?embedded=true"
+			>
+				Loading Google Form...
+			</iframe>
+		</div>
+	</div>
+</BasicLayout>
+<style>
+	iframe {
+		width: 60%;
+		height: 120vh;
+		border: none;
+	}
+</style>

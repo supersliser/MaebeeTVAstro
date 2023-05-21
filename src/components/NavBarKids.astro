@@ -1,13 +1,15 @@
 ---
-const { PrimaryColor, NavTextColor } = Astro.props;
-const primaryColour = PrimaryColor;
-const textColour = NavTextColor;
+const { frontmatter } = Astro.props;
+const primaryColour = frontmatter.PrimaryColor;
+const textColour = frontmatter.NavTextColor;
+const allMainPages = await Astro.glob("../pages/*.md");
 const AllFilms = await Astro.glob("../pages/films/*.md");
 const AllProjects = await Astro.glob("../pages/projects/*.md");
-const AllOther = await Astro.glob("../pages/other/*.astro");
+const AllOther = await Astro.glob("../pages/other/*.md");
 ---
 
 <style define:vars={{ primaryColour, textColour }}>
+import "@fontsource/boogaloo"
     nav {
         background-color: var(--primaryColour);
         position: fixed;
@@ -66,7 +68,7 @@ const AllOther = await Astro.glob("../pages/other/*.astro");
     .dropdown-content {
         display: none;
         position: absolute;
-        background-color: var(--primaryColour);
+        background-color: transparent;
         min-width: 160px;
         max-width: 200px;
         height: fit-content;
@@ -110,6 +112,12 @@ const AllOther = await Astro.glob("../pages/other/*.astro");
         padding: 0;
         color: var(--textColour);
     }
+
+    p.kids {
+        font-size: 2rem;
+        text-decoration: solid;
+        font-family: "Boogaloo", cursive;
+    }
 </style>
 <nav>
     <div>
@@ -120,6 +128,7 @@ const AllOther = await Astro.glob("../pages/other/*.astro");
                 src="https://cdn.discordapp.com/attachments/903265431396179978/977713498090008606/MaebeeTV-logos.jpeg"
             />
             <p class="serif">MaebeeTV Productions</p>
+            <p class="kids">Kids</p>
         </a>
         <ul>
             <li>
@@ -147,7 +156,7 @@ const AllOther = await Astro.glob("../pages/other/*.astro");
                 <div class="dropdown-content">
                     {
                         AllFilms.map((post) => (
-                            <a href={post.url}>
+                            <a href={post.frontmatter.url}>
                                 {post.frontmatter.title}
                             </a>
                         ))
@@ -173,7 +182,7 @@ const AllOther = await Astro.glob("../pages/other/*.astro");
                 <div class="dropdown-content">
                     {
                         AllProjects.map((post) => (
-                            <a href={post.url}>
+                            <a href={post.frontmatter.url}>
                                 {post.frontmatter.title}
                             </a>
                         ))
@@ -199,8 +208,8 @@ const AllOther = await Astro.glob("../pages/other/*.astro");
                 <div class="dropdown-content">
                     {
                         AllOther.map((post) => (
-                            <a href={post.url}>
-                                {post.title}
+                            <a href={post.frontmatter.url}>
+                                {post.frontmatter.title}
                             </a>
                         ))
                     }
