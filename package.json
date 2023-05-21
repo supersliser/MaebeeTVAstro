@@ -16,6 +16,7 @@
     "@fontsource/actor": "^4.5.9",
     "@fontsource/boogaloo": "^4.5.10",
     "@fontsource/brygada-1918": "^4.5.13",
+    "@fontsource/caveat-brush": "^5.0.0",
     "astro": "^2.5.1"
   }
 }

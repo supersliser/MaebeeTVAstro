@@ -19,7 +19,6 @@ for (var i = 0; i < AllFilms.pages.length; i++) {
 <style define:vars={{ primaryColour, textColour }}>
     nav {
         background-color: var(--primaryColour);
-        background-image: url(https://github.com/supersliser/MaebeeTVAstro/blob/master/src/images/wave.svg);
         position: fixed;
         top: 0;
         left: 0;
@@ -122,91 +121,20 @@ for (var i = 0; i < AllFilms.pages.length; i++) {
     }
 </style>
 
-    <nav>
+<nav>
     <div>
-        <a class="homeButton" href="../">
+        <a class="homeButton" href="/other/kids/">
             <img
                 width="32"
                 height="32"
                 src="https://cdn.discordapp.com/attachments/903265431396179978/977713498090008606/MaebeeTV-logos.jpeg"
             />
             <p class="serif">MaebeeTV Productions</p>
+            <p class="handwriting" style="font-size: 1.75rem; padding-left: 2%;">Kids</p>
         </a>
         <ul>
             <li>
-                <a href="/"> Home</a>
-            </li>
-            <li>
-                <a href="/about">About</a>
-            </li>
-            <li class="dropdown">
-                <a class="dropbtn" href="javascript:void(0)">
-                    Films
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        class="w-6 h-6"
-                        width="12px"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </a>
-                <div class="dropdown-content">
-                    {
-                        AllFilms.pages.map((post) => (
-                            <a href={post.glob}>{post.title}</a>
-                        ))
-                    }
-                </div>
-            </li>
-            <li class="dropdown">
-                <a class="dropbtn" href="javascript:void(0)">
-                    Projects
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        class="w-6 h-6"
-                        width="12px"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </a>
-                <div class="dropdown-content">
-                    {
-                        AllProjects.pages.map((post) => (
-                            <a href={post.glob}>{post.title}</a>
-                        ))
-                    }
-                </div>
-            </li>
-            <li class="dropdown">
-                <a class="dropbtn" href="javascript:void(0)">
-                    Other fun stuff
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        class="w-6 h-6"
-                        width="12px"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </a>
-                <div class="dropdown-content">
-                    <a href="/other/🐸">🐸</a>
-                    <a href="/other/privacypolicy">Privacy Policy</a>
-                </div>
+                <a href="/other/kids/">Home</a>
             </li>
         </ul>
     </div>
