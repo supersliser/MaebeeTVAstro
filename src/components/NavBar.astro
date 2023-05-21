@@ -2,14 +2,17 @@
 const { PrimaryColor, NavTextColor } = Astro.props;
 const primaryColour = PrimaryColor;
 const textColour = NavTextColor;
-const AllFilms = await fetch('https://api.npoint.io/f2948809e44e0dab1ee3').then(response => response.json());
-const AllProjects = await fetch('https://api.npoint.io/610b9bb2a97b2e3a797f').then(response => response.json());
-const AllOther = await Astro.glob("../pages/other/*.astro");
-for (var i = 0; i < AllProjects.pages.length; i++){
-    AllProjects.pages[i].glob = "projects/" + AllProjects.pages[i].glob
+const AllFilms = await fetch("https://api.npoint.io/f2948809e44e0dab1ee3").then(
+    (response) => response.json()
+);
+const AllProjects = await fetch(
+    "https://api.npoint.io/610b9bb2a97b2e3a797f"
+).then((response) => response.json());
+for (var i = 0; i < AllProjects.pages.length; i++) {
+    AllProjects.pages[i].glob = "../projects/" + AllProjects.pages[i].glob;
 }
-for (var i = 0; i < AllFilms.pages.length; i++){
-    AllFilms.pages[i].glob = "films/" + AllFilms.pages[i].glob
+for (var i = 0; i < AllFilms.pages.length; i++) {
+    AllFilms.pages[i].glob = "../films/" + AllFilms.pages[i].glob;
 }
 ---
 
@@ -153,9 +156,7 @@ for (var i = 0; i < AllFilms.pages.length; i++){
                 <div class="dropdown-content">
                     {
                         AllFilms.pages.map((post) => (
-                            <a href={post.glob}>
-                                {post.title}
-                            </a>
+                            <a href={post.glob}>{post.title}</a>
                         ))
                     }
                 </div>
@@ -178,11 +179,9 @@ for (var i = 0; i < AllFilms.pages.length; i++){
                 </a>
                 <div class="dropdown-content">
                     {
-                        AllProjects.pages.map((post) => 
-                            <a href={post.glob}>
-                                {post.title}
-                            </a>
-                        )
+                        AllProjects.pages.map((post) => (
+                            <a href={post.glob}>{post.title}</a>
+                        ))
                     }
                 </div>
             </li>
@@ -203,13 +202,7 @@ for (var i = 0; i < AllFilms.pages.length; i++){
                     </svg>
                 </a>
                 <div class="dropdown-content">
-                    {
-                        AllOther.map((post) => (
-                            <a href={post.url}>
-                                {post.file}
-                            </a>
-                        ))
-                    }
+                    <a href="/other/🐸">🐸</a>
                 </div>
             </li>
         </ul>
