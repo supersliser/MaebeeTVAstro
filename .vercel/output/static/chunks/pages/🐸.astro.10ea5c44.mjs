@@ -1,6 +1,6 @@
 import { c as createAstro, a as createComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute, f as renderComponent } from '../astro.a141932b.mjs';
 import 'html-escaper';
-import { $ as $$BasicLayout } from './_...glob_.astro.feda7668.mjs';
+import { $ as $$BasicLayout } from './_...glob_.astro.c09ede59.mjs';
 /* empty css                        *//* empty css                           *//* empty css                               */
 const $$Astro$1 = createAstro();
 const $$GalleryComp = createComponent(async ($$result, $$props, $$slots) => {

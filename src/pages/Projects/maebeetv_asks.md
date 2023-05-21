@@ -1,9 +1,0 @@
----
-title: 'MaebeeTV Asks'
-subtitle: 'MaebeeTV Asks'
-PrimaryColor: "#fc735b"
-NavTextColor: "#ffffff"
-link: "https://www.youtube.com/embed/r_fWFDubP_Q"
-text: "MaebeeTV Asks is a webseries with nine episodes that educates people about society and dispels common misunderstandings regarding the LGBT community."
-url: "maebeetv_asks"
----

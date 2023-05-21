@@ -9,8 +9,8 @@ const $$NavBar = createComponent(async ($$result, $$props, $$slots) => {
   const primaryColour = PrimaryColor;
   const textColour = NavTextColor;
   const AllFilms = await Astro2.glob(/* #__PURE__ */ Object.assign({"../pages/films/sweet_peas_fire.md": () => import('./sweet_peas_fire.md.7e5f81b4.mjs')}), () => "../pages/films/*.md");
-  const AllProjects = await Astro2.glob(/* #__PURE__ */ Object.assign({"../pages/projects/maebeetv_asks.md": () => import('./maebeetv_asks.md.7318eaa5.mjs')}), () => "../pages/projects/*.md");
-  const AllOther = await Astro2.glob(/* #__PURE__ */ Object.assign({"../pages/other/🐸.astro": () => import('./🐸.astro.538c2b00.mjs')}), () => "../pages/other/*.astro");
+  const AllProjects = await Astro2.glob(/* #__PURE__ */ Object.assign({"../pages/projects/[...glob].astro": () => Promise.resolve().then(() => ____glob_)}), () => "../pages/projects/*.astro");
+  const AllOther = await Astro2.glob(/* #__PURE__ */ Object.assign({"../pages/other/🐸.astro": () => import('./🐸.astro.10ea5c44.mjs')}), () => "../pages/other/*.astro");
   const $$definedVars = defineStyleVars([{ primaryColour, textColour }]);
   return renderTemplate`
 ${maybeRenderHead($$result)}<nav class="astro-YMHDP2RL"${addAttribute($$definedVars, "style")}>
@@ -35,7 +35,7 @@ ${maybeRenderHead($$result)}<nav class="astro-YMHDP2RL"${addAttribute($$definedV
                 </a>
                 <div class="dropdown-content astro-YMHDP2RL">
                     ${AllFilms.map((post) => renderTemplate`<a${addAttribute(post.url, "href")} class="astro-YMHDP2RL">
-                                ${post.frontmatter.title}
+                                ${post.file}
                             </a>`)}
                 </div>
             </li>
@@ -47,8 +47,8 @@ ${maybeRenderHead($$result)}<nav class="astro-YMHDP2RL"${addAttribute($$definedV
                     </svg>
                 </a>
                 <div class="dropdown-content astro-YMHDP2RL">
-                    ${AllProjects.map((post) => renderTemplate`<a${addAttribute(post.url, "href")} class="astro-YMHDP2RL">
-                                ${post.frontmatter.title}
+                    ${AllProjects.map((post) => renderTemplate`<a${addAttribute(post.title, "href")} class="astro-YMHDP2RL">
+                                ${post.glob}
                             </a>`)}
                 </div>
             </li>
@@ -61,7 +61,7 @@ ${maybeRenderHead($$result)}<nav class="astro-YMHDP2RL"${addAttribute($$definedV
                 </a>
                 <div class="dropdown-content astro-YMHDP2RL">
                     ${AllOther.map((post) => renderTemplate`<a${addAttribute(post.url, "href")} class="astro-YMHDP2RL">
-                                ${post.title}
+                                ${post.file}
                             </a>`)}
                 </div>
             </li>
@@ -94,26 +94,28 @@ const $$BasicLayout = createComponent(async ($$result, $$props, $$slots) => {
 }, "M:/maebeetv stuff/MaebeeTVAstro/src/layouts/BasicLayout.astro");
 
 const $$Astro = createAstro();
+const Astro = $$Astro;
 async function getStaticPaths() {
-  const data = await fetch("https://api.npoint.io/610b9bb2a97b2e3a797f/pages/0").then((response) => response.json());
-  return data.map((post) => {
+  const data = await fetch("https://api.npoint.io/610b9bb2a97b2e3a797f").then((response) => response.json());
+  return data.pages.map((post) => {
     return {
       params: { glob: post.glob },
-      props: { post }
+      props: { title: post.title, subtitle: post.subtitle, PrimaryColor: post.PrimaryColor, NavTextColor: post.NavTextColor, link: post.link, text: post.text }
     };
   });
 }
+const { glob } = Astro.params;
+const { title, subtitle, PrimaryColor, NavTextColor, link, text } = Astro.props;
 const $$ = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$;
-  const { entry } = Astro2.props;
-  return renderTemplate`${renderComponent($$result, "BasicLayout", $$BasicLayout, { "title": entry.title, "subtitle": entry.subtitle, "PrimaryColor": entry.PrimaryColor, "NavTextColor": entry.NavTextColor, "class": "astro-NAYYEELK" }, { "default": ($$result2) => renderTemplate`
+  return renderTemplate`${renderComponent($$result, "BasicLayout", $$BasicLayout, { "title": title, "subtitle": subtitle, "PrimaryColor": PrimaryColor, "NavTextColor": NavTextColor, "class": "astro-NAYYEELK" }, { "default": ($$result2) => renderTemplate`
   ${maybeRenderHead($$result2)}<div class="vertical astro-NAYYEELK" style="margin-top: 10%">
     <div class="sixteenNine astro-NAYYEELK">
-      <iframe${addAttribute(entry.link, "src")} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class="astro-NAYYEELK"></iframe>
+      <iframe${addAttribute(link, "src")} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" class="astro-NAYYEELK"></iframe>
     </div>
     <div class="astro-NAYYEELK">
-      <p class="serif project astro-NAYYEELK">${entry.text}</p>
+      <p class="serif project astro-NAYYEELK">${text}</p>
     </div>
   </div>
 ` })}`;
@@ -124,9 +126,16 @@ const $$url = "/projects/[...glob]";
 
 const ____glob_ = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
     __proto__: null,
+    NavTextColor,
+    PrimaryColor,
     default: $$,
     file: $$file,
     getStaticPaths,
+    glob,
+    link,
+    subtitle,
+    text,
+    title,
     url: $$url
 }, Symbol.toStringTag, { value: 'Module' }));
 

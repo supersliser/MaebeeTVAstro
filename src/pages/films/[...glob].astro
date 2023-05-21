@@ -1,10 +1,16 @@
 ---
-const { title, subtitle, PrimaryColor, NavTextColor, link, text } = Astro.params;
-export function getStaticPaths() {
-  return [
-    {params: {url: "sweet_peas_fire"}},
-  ];
+export async function getStaticPaths() {
+  const data = await fetch('https://api.npoint.io/f2948809e44e0dab1ee3').then(response => response.json());
+
+  return data.pages.map((post) => {
+    return {
+      params: { glob: post.glob },
+      props: { title: post.title, subtitle: post.subtitle, PrimaryColor: post.PrimaryColor, NavTextColor: post.NavTextColor, link: post.link, text: post.text},
+    };
+  });
 }
+const { glob } = Astro.params;
+const { title, subtitle, PrimaryColor, NavTextColor, link, text } = Astro.props;
 import BasicLayout from "../../layouts/BasicLayout.astro";
 ---
 

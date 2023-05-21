@@ -1,34 +1,35 @@
 ---
 export async function getStaticPaths() {
-  const data = await fetch('https://api.npoint.io/610b9bb2a97b2e3a797f/pages/0').then(response => response.json());
+  const data = await fetch('https://api.npoint.io/610b9bb2a97b2e3a797f').then(response => response.json());
 
-  return data.map((post) => {
+  return data.pages.map((post) => {
     return {
       params: { glob: post.glob },
-      props: { post },
+      props: { title: post.title, subtitle: post.subtitle, PrimaryColor: post.PrimaryColor, NavTextColor: post.NavTextColor, link: post.link, text: post.text},
     };
   });
 }
-const { entry } = Astro.props;
+const { glob } = Astro.params;
+const { title, subtitle, PrimaryColor, NavTextColor, link, text } = Astro.props;
 import BasicLayout from "../../layouts/BasicLayout.astro";
 ---
 
 <BasicLayout
-  title={entry.title}
-  subtitle={entry.subtitle}
-  PrimaryColor={entry.PrimaryColor}
-  NavTextColor={entry.NavTextColor}
+  title={title}
+  subtitle={subtitle}
+  PrimaryColor={PrimaryColor}
+  NavTextColor={NavTextColor}
 >
   <div class="vertical" style="margin-top: 10%">
     <div class="sixteenNine">
       <iframe
-        src={entry.link}
+        src={link}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       ></iframe>
     </div>
     <div>
-      <p class="serif project">{entry.text}</p>
+      <p class="serif project">{text}</p>
     </div>
   </div>
 </BasicLayout>

@@ -2,9 +2,15 @@
 const { PrimaryColor, NavTextColor } = Astro.props;
 const primaryColour = PrimaryColor;
 const textColour = NavTextColor;
-const AllFilms = await Astro.glob("../pages/films/*.md");
-const AllProjects = await Astro.glob("../pages/projects/*.md");
+const AllFilms = await fetch('https://api.npoint.io/f2948809e44e0dab1ee3').then(response => response.json());
+const AllProjects = await fetch('https://api.npoint.io/610b9bb2a97b2e3a797f').then(response => response.json());
 const AllOther = await Astro.glob("../pages/other/*.astro");
+for (var i = 0; i < AllProjects.pages.length; i++){
+    AllProjects.pages[i].glob = "projects/" + AllProjects.pages[i].glob
+}
+for (var i = 0; i < AllFilms.pages.length; i++){
+    AllFilms.pages[i].glob = "films/" + AllFilms.pages[i].glob
+}
 ---
 
 <style define:vars={{ primaryColour, textColour }}>
@@ -126,7 +132,7 @@ const AllOther = await Astro.glob("../pages/other/*.astro");
                 <a href="/"> Home</a>
             </li>
             <li>
-                <a href="/about"> About</a>
+                <a href="/about">About</a>
             </li>
             <li class="dropdown">
                 <a class="dropbtn" href="javascript:void(0)">
@@ -146,9 +152,9 @@ const AllOther = await Astro.glob("../pages/other/*.astro");
                 </a>
                 <div class="dropdown-content">
                     {
-                        AllFilms.map((post) => (
-                            <a href={post.url}>
-                                {post.frontmatter.title}
+                        AllFilms.pages.map((post) => (
+                            <a href={post.glob}>
+                                {post.title}
                             </a>
                         ))
                     }
@@ -172,11 +178,11 @@ const AllOther = await Astro.glob("../pages/other/*.astro");
                 </a>
                 <div class="dropdown-content">
                     {
-                        AllProjects.map((post) => (
-                            <a href={post.url}>
-                                {post.frontmatter.title}
+                        AllProjects.pages.map((post) => 
+                            <a href={post.glob}>
+                                {post.title}
                             </a>
-                        ))
+                        )
                     }
                 </div>
             </li>
@@ -200,7 +206,7 @@ const AllOther = await Astro.glob("../pages/other/*.astro");
                     {
                         AllOther.map((post) => (
                             <a href={post.url}>
-                                {post.title}
+                                {post.file}
                             </a>
                         ))
                     }
