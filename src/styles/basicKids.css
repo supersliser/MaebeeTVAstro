@@ -1,0 +1,49 @@
+html {
+    background-size: cover;
+    background-color: #090909;
+    color: white;
+}
+h1 {
+    color: #fb923c;
+    font-weight: 800;
+    font-size: 5rem;
+    text-align: center;
+}
+p {
+    text-align: center;
+}
+div.vertical {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+div.vertical p {
+    font-size: 2rem;
+}
+div.horizontal {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+.double {
+    width: 25%;
+}
+.main {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.marginTop {
+    margin-top: 10%;
+}
+.marginTop2 {
+    margin-top: 20%;
+}
+.seventyFive {
+    width: 65%;
+}
