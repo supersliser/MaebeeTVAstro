@@ -1,0 +1,50 @@
+---
+export async function getStaticPaths() {
+  const data = await fetch("https://jsonkeeper.com/b/K4DE").then((response) => response.json());
+  data.map((entry) => {
+    return [{ params: { glob: entry.url }, props: { entry } }];
+  });
+}
+const { glob } = Astro.params;
+const { data } = Astro.props;
+import BasicLayout from "../../layouts/BasicLayout.astro";
+---
+
+<BasicLayout
+  title={data.title}
+  subtitle={data.subtitle}
+  PrimaryColor={data.PrimaryColor}
+  NavTextColor={data.NavTextColor}
+>
+  <div class="vertical" style="margin-top: 10%">
+    <div class="sixteenNine">
+      <iframe
+        src={data.link}
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      ></iframe>
+    </div>
+    <div>
+      <p class="serif project">{data.text}</p>
+    </div>
+  </div>
+</BasicLayout>
+
+<style>
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60%;
+    width: 100%;
+  }
+  .sixteenNine {
+    width: 60%;
+    overflow: hidden;
+    position: relative;
+    padding-top: 56.25%;
+    margin-bottom: -20%;
+  }
+</style>
