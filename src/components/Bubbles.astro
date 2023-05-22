@@ -1,0 +1,32 @@
+---
+import Particles from "astro-particles"
+import type { ISourceOptions } from "tsparticles-engine";
+
+const options: ISourceOptions = {
+        autoPlay: true,
+        background: {
+            color: "#090909"
+        },
+        fullScreen: {
+            enable: true,
+            zIndex: -1
+        },
+        particles: {
+            color: {
+                value: "#6a731c"
+            }
+        },
+        preset: "bubbles",
+};
+---
+
+<script>
+    import { tsParticles } from "tsparticles-engine";
+    import { loadFull } from "tsparticles";
+
+    (async () => {
+        await loadFull(tsParticles);
+    })();
+</script>
+
+<Particles id="tsparticles" options={options} />
