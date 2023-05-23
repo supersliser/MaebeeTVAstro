@@ -29,6 +29,19 @@ const options: ISourceOptions = {
 
     await tsParticles.load("tsparticles", {
       preset: "bigCircles", // also "big-circles" is accepted
+      autoPlay: true,
+      background: {
+        color: "#090909",
+      },
+      fullScreen: {
+        enable: true,
+        zIndex: -1,
+      },
+      particles: {
+        color: {
+          value: "#6a731c",
+        },
+      },
     });
   })();
 </script>
