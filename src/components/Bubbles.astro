@@ -3,7 +3,7 @@ import Particles from "astro-particles"
 import type { ISourceOptions } from "tsparticles-engine";
 
 const options: ISourceOptions = {
-        autoPlay: true,
+        // autoPlay: true,
         background: {
             color: "#090909"
         },
@@ -16,17 +16,21 @@ const options: ISourceOptions = {
                 value: "#6a731c"
             }
         },
-        preset: "bubbles",
+        preset: "bigCircles",
 };
 ---
 
 <script>
     import { tsParticles } from "tsparticles-engine";
-    import { loadFull } from "tsparticles";
+    import { loadBigCirclesPreset } from "tsparticles-preset-big-circles";
 
     (async () => {
-        await loadFull(tsParticles);
-    })();
+  await loadBigCirclesPreset(tsParticles); // this is required only if you are not using the bundle script
+
+  await tsParticles.load("tsparticles", {
+    preset: "bigCircles", // also "big-circles" is accepted
+  });
+})();
 </script>
 
-<Particles id="tsparticles" options={options} />
+<Particles id="tsparticles" options={options}><slot/></Particles>

@@ -18,7 +18,7 @@ for (var i = 0; i < AllFilms.pages.length; i++) {
 
 <style define:vars={{ primaryColour, textColour }}>
     nav {
-        background-color: var(--primaryColour);
+        background-color: transparent;
         display: flex;
         justify-content: start;
         flex-wrap: nowrap;
@@ -27,7 +27,7 @@ for (var i = 0; i < AllFilms.pages.length; i++) {
         z-index: 1;
     }
     svg.drips, nav {
-        position: static;
+        position: absolute;
         top: 0;
         left: 0;
         margin: 0;
