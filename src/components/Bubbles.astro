@@ -34,7 +34,7 @@ const options: ISourceOptions = {
         color: "#090909",
       },
       fullScreen: {
-        enable: false,
+        enable: true,
         zIndex: -1,
       },
       particles: {
@@ -74,12 +74,4 @@ const options: ISourceOptions = {
   })();
 </script>
 
-<Particles id="tsparticles" options={options} class="hi"><slot /></Particles>
-<style>
-  .hi {
-    height: fit-content;
-    position: fixed;
-    z-index: -1;
-    width: 100%;
-  }
-</style>
+<Particles id="tsparticles" options={options} />
