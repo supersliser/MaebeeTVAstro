@@ -4,6 +4,19 @@ import type { ISourceOptions } from "tsparticles-engine";
 
 const options: ISourceOptions = {
   preset: "bigCircles",
+  autoPlay: true,
+  background: {
+    color: "#090909",
+  },
+  fullScreen: {
+    enable: true,
+    zIndex: -1,
+  },
+  particles: {
+    color: {
+      value: "#6a731c",
+    },
+  },
 };
 ---
 
@@ -16,12 +29,12 @@ const options: ISourceOptions = {
 
     await tsParticles.load("tsparticles", {
       preset: "bigCircles", // also "big-circles" is accepted
-      // autoPlay: true,
+      autoPlay: true,
       background: {
         color: "#090909",
       },
       fullScreen: {
-        enable: true,
+        enable: false,
         zIndex: -1,
       },
       particles: {
@@ -30,8 +43,8 @@ const options: ISourceOptions = {
         },
         move: {
           speed: {
-            max: 5,
-            min: 0.1,
+            max: 20,
+            min: 5,
           }
         },
         opacity: {
@@ -45,6 +58,7 @@ const options: ISourceOptions = {
         },
         number: {
           limit: 20,
+
         },
         interactivity: {
           detectsOn: "window",
@@ -60,4 +74,4 @@ const options: ISourceOptions = {
   })();
 </script>
 
-<Particles id="tsparticles" options={options} class="hi"><slot /></Particles>
+<Particles id="tsparticles" options={options}><slot /></Particles>
