@@ -1,36 +1,36 @@
 ---
-import Particles from "astro-particles"
+import Particles from "astro-particles";
 import type { ISourceOptions } from "tsparticles-engine";
 
 const options: ISourceOptions = {
-        // autoPlay: true,
-        background: {
-            color: "#090909"
-        },
-        fullScreen: {
-            enable: true,
-            zIndex: -1
-        },
-        particles: {
-            color: {
-                value: "#6a731c"
-            }
-        },
-        preset: "bigCircles",
+  preset: "bigCircles",
+  autoPlay: true,
+  background: {
+    color: "#090909",
+  },
+  fullScreen: {
+    enable: true,
+    zIndex: -1,
+  },
+  particles: {
+    color: {
+      value: "#6a731c",
+    },
+  },
 };
 ---
 
 <script>
-    import { tsParticles } from "tsparticles-engine";
-    import { loadBigCirclesPreset } from "tsparticles-preset-big-circles";
+  import { tsParticles } from "tsparticles-engine";
+  import { loadBigCirclesPreset } from "tsparticles-preset-big-circles";
 
-    (async () => {
-  await loadBigCirclesPreset(tsParticles); // this is required only if you are not using the bundle script
+  (async () => {
+    await loadBigCirclesPreset(tsParticles); // this is required only if you are not using the bundle script
 
-  await tsParticles.load("tsparticles", {
-    preset: "bigCircles", // also "big-circles" is accepted
-  });
-})();
+    await tsParticles.load("tsparticles", {
+      preset: "bigCircles", // also "big-circles" is accepted
+    });
+  })();
 </script>
 
-<Particles id="tsparticles" options={options}><slot/></Particles>
+<Particles id="tsparticles" options={options}><slot /></Particles>
