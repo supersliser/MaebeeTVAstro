@@ -3,23 +3,29 @@ const { title, subtitle, PrimaryColor, NavTextColor } = Astro.props;
 import Nav from "../components/NavBar.astro";
 export const prerender = true;
 import Top from "../components/Top.astro";
-import "../styles/basic.css"
-import "../styles/fonts.css"
+import "../styles/basic.css";
+import "../styles/fonts.css";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link
-			rel="icon"
-			type="image/svg+xml"
-			href="https://media.discordapp.net/attachments/903265431396179978/977713498090008606/MaebeeTV-logos.jpeg?width=810&height=810"
-		/>
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title} - MaebeeTV</title>
-	</head>
+    <head>
+        <meta charset="utf-8" />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="https://media.discordapp.net/attachments/903265431396179978/977713498090008606/MaebeeTV-logos.jpeg?width=810&height=810"
+        />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title} - MaebeeTV</title>
+    </head>
 </html>
 <body>
-    <top />
+    <Top
+        title={title}
+        subtitle={subtitle}
+        primaryColor={PrimaryColor}
+        navTextColor={NavTextColor}
+    />
+    <slot />
 </body>
