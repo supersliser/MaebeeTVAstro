@@ -2,9 +2,7 @@
 const { title, subtitle, PrimaryColor, NavTextColor } = Astro.props;
 import Nav from "../components/NavBar.astro";
 export const prerender = true;
-import Top from "../components/Top.astro";
-import "../styles/basic.css";
-import "../styles/fonts.css";
+import Top from "../components/NewTop.astro";
 ---
 
 <html lang="en">
@@ -19,13 +17,20 @@ import "../styles/fonts.css";
         <meta name="generator" content={Astro.generator} />
         <title>{title} - MaebeeTV</title>
     </head>
+    <body>
+        <Top
+            title={title}
+            subtitle={subtitle}
+            primaryColor={PrimaryColor}
+            navTextColor={NavTextColor}
+        />
+        <slot />
+    </body>
+    <style>
+        body {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
 </html>
-<body>
-    <Top
-        title={title}
-        subtitle={subtitle}
-        primaryColor={PrimaryColor}
-        navTextColor={NavTextColor}
-    />
-    <slot />
-</body>

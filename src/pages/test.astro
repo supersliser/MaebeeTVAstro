@@ -1,10 +1,10 @@
 ---
 import BasicLayout from "../layouts/NewBasicLayout.astro";
+import Block from "../components/TextBlock.astro";
 const title = "Home";
 const subtitle = "Changing the world, one story at a time";
 const PrimaryColor = "#ff9dd0";
 const NavTextColor = "#000000";
-import "../styles/basic.css";
 ---
 
 <BasicLayout
@@ -13,5 +13,8 @@ import "../styles/basic.css";
     primaryColor={PrimaryColor}
     navTextColor={NavTextColor}
 >
-<p>hi</p>
+<Block style="text-align: left;" textColour="#000000" backColour="#ffffff">
+    <h1>this is a test</h1>
+    <p>this is also a test</p>
+</Block>
 </BasicLayout>
