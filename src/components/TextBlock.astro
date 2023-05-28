@@ -14,9 +14,8 @@ const { textColour, backColour } = Astro.props;
         border-radius: 0;
     }
     .anim {
-        padding-top: 20px;
-        opacity: 0;
         color: black;
+        opacity: 1;
     }
 </style>
 
@@ -24,4 +23,18 @@ const { textColour, backColour } = Astro.props;
     <h1 class="anim">This is a text</h1>
     <p class="anim">These are test words</p>
 </div>
-<script src="../scripts/CheckIfVisible.js"></script>
+<script src="../../node_modules/scrollreveal/dist/scrollreveal.min.js"></script>
+<script>
+    import ScrollReveal from 'scrollreveal';
+  export function handleLoad() {
+    const sr = ScrollReveal();
+    sr.reveal('.anim', {
+      duration: 10000,
+      distance: '20px',
+      origin: 'bottom',
+      opacity: 0,
+      interval: 200
+    });
+  }
+
+</script>
