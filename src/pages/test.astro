@@ -1,10 +1,12 @@
 ---
 import BasicLayout from "../layouts/NewBasicLayout.astro";
-import Block from "../components/TextBlock.astro";
+import AnimBlock from "../components/AnimationBlock.astro";
+import Item from "../components/Item.astro";
 const title = "Home";
 const subtitle = "Changing the world, one story at a time";
 const PrimaryColor = "#ff9dd0";
 const NavTextColor = "#000000";
+import "../styles/newDefault.css";
 ---
 
 <BasicLayout
@@ -13,8 +15,18 @@ const NavTextColor = "#000000";
     primaryColor={PrimaryColor}
     navTextColor={NavTextColor}
 >
-<Block style="text-align: left;" textColour="#000000" backColour="#ffffff">
-    <h1>this is a test</h1>
-    <p>this is also a test</p>
-</Block>
+<div style="background-color: white;">
+    <AnimBlock style="width: 60%;" backColour="#ffffff">
+        <h1 class="titleText">Welcome to</h1>
+        <h1 class="titleText hover">MaebeeTV</h1>
+    </AnimBlock>
+    <AnimBlock backColour="#ffffff">
+        <p class="subtitleText">
+            We are a movie production company that strives to change the way stories are told.
+        </p>
+    </AnimBlock>
+</div>
+<div>
+<Item image="https://github.com/supersliser/MaebeeTVAstro/blob/5440bbe434aa0b10c5e77ed2d432a52916cf0257/src/images/Maebee_TVAsks.png" title="MaebeeTV Asks" float="left" />
+</div>
 </BasicLayout>

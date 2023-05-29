@@ -1,0 +1,26 @@
+---
+const { image, title, float } = Astro.props;
+import AnimBlock from "../components/AnimationBlock.astro";
+---
+<style define:vars={{ float }}>
+@import '@fontsource-variable/baloo-bhaina-2';
+div {
+    width: 40%;
+    margin-top: 15%;
+    margin-bottom: 15%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+AnimBlock {
+    width: 35%;
+    font-family: 'Baloo Bhaina 2 Variable', sans-serif;
+}
+img {
+    width: 100%;
+    height: fit-content;
+}
+</style>
+<div>
+    <AnimBlock>{title}</AnimBlock>
+    <img src={image} alt={"an image displaying " + title} />
+</div>

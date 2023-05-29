@@ -13,6 +13,8 @@
     "@astrojs/preact": "^2.2.0",
     "@astrojs/react": "^2.2.0",
     "@astrojs/vercel": "^3.4.0",
+    "@fontsource-variable/baloo-bhaina-2": "^5.0.1",
+    "@fontsource-variable/rubik": "^5.0.2",
     "@fontsource/abeezee": "^4.5.10",
     "@fontsource/abyssinica-sil": "^4.5.2",
     "@fontsource/actor": "^4.5.9",

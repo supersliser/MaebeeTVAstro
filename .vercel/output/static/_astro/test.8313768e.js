@@ -1,0 +1,1 @@
+function s(){const n=document.querySelectorAll(".anim");function t(){n.forEach(e=>{const o=e.getBoundingClientRect().top,i=window.innerHeight;o<i?e.classList.add("fade-in"):e.classList.remove("fade-in")})}window.addEventListener("scroll",t)}export{s as default};

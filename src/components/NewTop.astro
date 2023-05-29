@@ -5,7 +5,7 @@ const { title, subtitle, PrimaryColor, NavTextColor } = Astro.props;
 <style>
     .topContainer {
         background-color: #090909;
-        height: 105vh;
+        height: fit-content;
         width: 100%;
         display: flex;
         align-items: center;
@@ -13,7 +13,7 @@ const { title, subtitle, PrimaryColor, NavTextColor } = Astro.props;
     }
 </style>
 <div class="topContainer">
-    <video height="100%" autoplay muted loop>
+    <video width="100%" autoplay muted loop>
         <source
             src="https://cdn.discordapp.com/attachments/876842478291013652/1112448993499287742/MaebeeTVLogo.mp4"
             type="video/mp4"
