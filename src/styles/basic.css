@@ -1,8 +1,12 @@
 @import "@fontsource/brygada-1918";
 @import "@fontsource/actor";
-html {
+body {
     background-color: #090909;
     color: white;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
 }
 h1 {
     color: #fb923c;
@@ -37,14 +41,44 @@ div.horizontal {
     align-items: center;
     width: 100%;
 }
-.double {
-    width: 25%;
-}
 .main {
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
 }
+.LargeParagraph {
+    width: 50%;
+}
+@media screen and (max-width: 1000px) {
+    div.vertical {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+    }
+    div.horizontal {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+    }
+    .main {
+        width: 80%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+    .LargeParagraph {
+        width: 70vw;
+    }
+}
+.double {
+    width: 25%;
+}
+
 .marginTop {
     margin-top: 10%;
 }

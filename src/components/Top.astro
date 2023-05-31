@@ -10,11 +10,13 @@ import "../styles/basic.css";
 <style define:vars={{ PrimaryColor, NavTextColor }}>
     .top {
         position: static;
-        margin-top: -0.5rem;
+        margin: 0;
+        padding: 0;
+        padding-top: 1rem;
         background-color: var(--PrimaryColor);
-        width: 101%;
+        width: 100%;
         overflow: hidden;
-        margin-left: -0.5rem;
+        border-radius: 0;
     }
     .top h1 {
         color: var(--NavTextColor);
@@ -22,5 +24,15 @@ import "../styles/basic.css";
         margin-bottom: 10%;
         font-style: italic;
         text-decoration: solid;
+    }
+    @media screen and (max-width: 1000px) {
+        .top {
+            padding-top: 2rem;
+        }
+    }
+    @media screen and (max-width: 500px) {
+        .top {
+            padding-top: 9rem;
+        }
     }
 </style>
