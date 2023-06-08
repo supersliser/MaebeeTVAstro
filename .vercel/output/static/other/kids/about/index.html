@@ -13,7 +13,7 @@
 	<body>
 		
 
-<astro-particles data-id="tsparticles" data-options="{&#34;preset&#34;:&#34;bigCircles&#34;,&#34;autoPlay&#34;:true,&#34;background&#34;:{&#34;color&#34;:&#34;#090909&#34;},&#34;fullScreen&#34;:{&#34;enable&#34;:true,&#34;zIndex&#34;:-1},&#34;particles&#34;:{&#34;color&#34;:{&#34;value&#34;:&#34;#6a731c&#34;}}}">
+<astro-particles data-id="tsparticles" data-options="{&#34;preset&#34;:&#34;bigCircles&#34;,&#34;autoPlay&#34;:true,&#34;background&#34;:{&#34;color&#34;:&#34;#090909&#34;},&#34;fullScreen&#34;:{&#34;enable&#34;:true,&#34;zIndex&#34;:-1},&#34;particles&#34;:{&#34;color&#34;:{&#34;value&#34;:&#34;#fffb0d&#34;}}}">
     <canvas></canvas>
 </astro-particles>
 		
@@ -32,17 +32,30 @@
             <li class="astro-NRRH4JV5">
                 <a class="handwriting astro-NRRH4JV5" href="../kids/about">About Us</a>
             </li>
-            <li class="dropdown astro-NRRH4JV5" style="padding-top: 10%;">
-                <a class="dropbtn handwriting astro-NRRH4JV5" href="javascript:void(0)">
+<!--             <li class="dropdown" style="padding-top: 10%;">
+                <a class="dropbtn handwriting" href="javascript:void(0)">
                     Films
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 astro-NRRH4JV5" width="12px">
-                        <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z" clip-rule="evenodd" class="astro-NRRH4JV5"></path>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="w-6 h-6"
+                        width="12px"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
+                            clip-rule="evenodd"></path>
                     </svg>
                 </a>
-                <div class="dropdown-content astro-NRRH4JV5">
-                    <a class="handwriting astro-NRRH4JV5" href="../films/sweet_peas_fire">Sweet Pea&#39;s Fire</a>
+                <div class="dropdown-content">
+                    {
+                        AllFilms.pages.map((post) => (
+                            <a class="handwriting" href={post.glob}>{post.title}</a>
+                        ))
+                    }
                 </div>
-            </li>
+            </li> -->
             <li class="dropdown astro-NRRH4JV5" style="padding-top: 20%;">
                 <a class="handwriting dropbtn astro-NRRH4JV5" href="javascript:void(0)">
                     TV Shows
@@ -51,7 +64,7 @@
                     </svg>
                 </a>
                 <div class="dropdown-content astro-NRRH4JV5">
-                    <a class="handwriting astro-NRRH4JV5" href="../projects/maebeetv_asks">MaebeeTV Asks</a>
+                    <a class="handwriting astro-NRRH4JV5" href="../kids/tv/cozies">Cozies</a>
                 </div>
             </li>
         </ul>

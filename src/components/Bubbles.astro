@@ -2,6 +2,8 @@
 import Particles from "astro-particles";
 import type { ISourceOptions } from "tsparticles-engine";
 
+const { color } = Astro.props;
+
 const options: ISourceOptions = {
   preset: "bigCircles",
   autoPlay: true,
@@ -14,7 +16,7 @@ const options: ISourceOptions = {
   },
   particles: {
     color: {
-      value: "#6a731c",
+      value: color,
     },
   },
 };
