@@ -13,10 +13,10 @@ export default defineConfig({
         "has": [
           {
             "type": "host",
-            "value": "app.acme.com"
+            "value": "maebeetv.kids.com"
           }
         ],
-        "destination": "/app/:path*"
+        "destination": "/kids/"
       }
     ]
 });
