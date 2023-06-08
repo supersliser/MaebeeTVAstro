@@ -7,16 +7,4 @@ export default defineConfig({
   output: 'static',
   adapter: vercel(),
   integrations: [react()],
-    "rewrites": [
-      {
-        "source": "/:path*",
-        "has": [
-          {
-            "type": "host",
-            "value": "https://maebee-tv-astro-git-makingkidssitenewdomain-maebee-tv.kids.vercel.app"
-          }
-        ],
-        "destination": "/kids/"
-      }
-    ]
 });
