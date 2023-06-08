@@ -7,6 +7,9 @@ h1 {
     font-size: 5rem;
     text-align: center;
 }
+iframe {
+    border:none;
+}
 p {
     text-align: center;
 }

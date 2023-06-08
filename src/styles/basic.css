@@ -5,6 +5,9 @@ html {
 body {
     overflow-x: hidden;
 }
+iframe {
+    border:none;
+}
 h1 {
     color: #fb923c;
     font-weight: 800;
