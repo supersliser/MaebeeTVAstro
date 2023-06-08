@@ -7,4 +7,16 @@ export default defineConfig({
   output: 'static',
   adapter: vercel(),
   integrations: [react()],
+    "rewrites": [
+      {
+        "source": "/:path*",
+        "has": [
+          {
+            "type": "host",
+            "value": "app.acme.com"
+          }
+        ],
+        "destination": "/app/:path*"
+      }
+    ]
 });
