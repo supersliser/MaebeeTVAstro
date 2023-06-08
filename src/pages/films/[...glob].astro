@@ -1,7 +1,6 @@
 ---
+import data from "../../content/films.json";
 export async function getStaticPaths() {
-  const data = await fetch('https://api.npoint.io/f2948809e44e0dab1ee3').then(response => response.json());
-
   return data.pages.map((post) => {
     return {
       params: { glob: post.glob },
