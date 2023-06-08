@@ -122,7 +122,7 @@ import AllProjects from "../content/kids/tv.json";
 
 <nav>
     <div>
-        <a class="homeButton" href="../kids/">
+        <a class="homeButton" href="/other/kids/">
             <img
                 width="60"
                 height="60"
@@ -133,10 +133,10 @@ import AllProjects from "../content/kids/tv.json";
         </a>
         <ul>
             <li>
-                <a class="handwriting" href="../kids/">Home</a>
+                <a class="handwriting" href="/other/kids/">Home</a>
             </li>
             <li>
-                <a class="handwriting" href="../kids/about">About Us</a>
+                <a class="handwriting" href="/other/kids/about">About Us</a>
             </li>
 <!--             <li class="dropdown" style="padding-top: 10%;">
                 <a class="dropbtn handwriting" href="javascript:void(0)">
@@ -181,7 +181,7 @@ import AllProjects from "../content/kids/tv.json";
                 <div class="dropdown-content">
                     {
                         AllProjects.pages.map((post) => (
-                            <a class="handwriting" href={"../kids/tv/" + post.glob}>{post.title}</a>
+                            <a class="handwriting" href={"/other/kids/tv/" + post.glob}>{post.title}</a>
                         ))
                     }
                 </div>
