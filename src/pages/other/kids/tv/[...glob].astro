@@ -1,5 +1,5 @@
 ---
-import data from "../../content/films.json";
+import data from "../../../../content/kids/tv.json";
 export async function getStaticPaths() {
   return data.pages.map((post) => {
     return {
@@ -10,7 +10,7 @@ export async function getStaticPaths() {
 }
 const { glob } = Astro.params;
 const { title, subtitle, PrimaryColor, NavTextColor, link, text } = Astro.props;
-import BasicLayout from "../../layouts/BasicLayout.astro";
+import BasicLayout from "../../../../layouts/BasicKidsLayout.astro";
 ---
 
 <BasicLayout

@@ -2,34 +2,32 @@
 const { PrimaryColor, NavTextColor } = Astro.props;
 const primaryColour = PrimaryColor;
 const textColour = NavTextColor;
-const AllFilms = await fetch("https://api.npoint.io/f2948809e44e0dab1ee3").then(
-    (response) => response.json()
-);
-const AllProjects = await fetch(
-    "https://api.npoint.io/610b9bb2a97b2e3a797f"
-).then((response) => response.json());
-for (var i = 0; i < AllProjects.pages.length; i++) {
-    AllProjects.pages[i].glob = "../projects/" + AllProjects.pages[i].glob;
-}
-for (var i = 0; i < AllFilms.pages.length; i++) {
-    AllFilms.pages[i].glob = "../films/" + AllFilms.pages[i].glob;
-}
+// import AllFilms from "../content/kids/films.json";
+import AllProjects from "../content/kids/tv.json";
+// for (var i = 0; i < AllProjects.pages.length; i++) {
+//     AllProjects.pages[i].glob = "/kids/tv/" + AllProjects.pages[i].glob;
+// }
+// for (var i = 0; i < AllFilms.pages.length; i++) {
+//     AllFilms.pages[i].glob = "../kids/films/" + AllFilms.pages[i].glob;
+// }
 ---
 
 <style define:vars={{ primaryColour, textColour }}>
     nav {
-        background-color: var(--primaryColour);
-        position: fixed;
-        top: 0;
-        left: 0;
-        margin: 0;
-        padding: 0;
+        background-color: transparent;
         display: flex;
         justify-content: start;
         flex-wrap: nowrap;
         white-space: nowrap;
         align-items: stretch;
         z-index: 1;
+    }
+    svg.drips, nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
         width: 100%;
     }
 
@@ -61,6 +59,7 @@ for (var i = 0; i < AllFilms.pages.length; i++) {
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
+        font-size: 1.5rem;
     }
 
     li a:hover,
@@ -114,31 +113,33 @@ for (var i = 0; i < AllFilms.pages.length; i++) {
     }
 
     a.homeButton p {
-        font-size: 1rem;
+        font-size: 1.5rem;
         margin: 0;
         padding: 0;
         color: var(--textColour);
     }
 </style>
+
 <nav>
     <div>
-        <a class="homeButton" href="../">
+        <a class="homeButton" href="/other/kids/">
             <img
-                width="32"
-                height="32"
-                src="https://cdn.discordapp.com/attachments/903265431396179978/977713498090008606/MaebeeTV-logos.jpeg"
+                width="60"
+                height="60"
+                src="https://cdn.discordapp.com/attachments/903258487872700520/1110100037825990746/MaebeeTVKids.png"
             />
             <p class="serif">MaebeeTV Productions</p>
+            <p class="handwriting" style="font-size: 2.5rem; padding-left: 2%;">Kids</p>
         </a>
         <ul>
             <li>
-                <a href="/"> Home</a>
+                <a class="handwriting" href="/other/kids/">Home</a>
             </li>
             <li>
-                <a href="/about">About</a>
+                <a class="handwriting" href="/other/kids/about">About Us</a>
             </li>
-            <li class="dropdown">
-                <a class="dropbtn" href="javascript:void(0)">
+<!--             <li class="dropdown" style="padding-top: 10%;">
+                <a class="dropbtn handwriting" href="javascript:void(0)">
                     Films
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -156,14 +157,14 @@ for (var i = 0; i < AllFilms.pages.length; i++) {
                 <div class="dropdown-content">
                     {
                         AllFilms.pages.map((post) => (
-                            <a href={post.glob}>{post.title}</a>
+                            <a class="handwriting" href={post.glob}>{post.title}</a>
                         ))
                     }
                 </div>
-            </li>
-            <li class="dropdown">
-                <a class="dropbtn" href="javascript:void(0)">
-                    Projects
+            </li> -->
+            <li class="dropdown" style="padding-top: 20%;">
+                <a class="handwriting dropbtn" href="javascript:void(0)">
+                    TV Shows
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24"
@@ -180,33 +181,12 @@ for (var i = 0; i < AllFilms.pages.length; i++) {
                 <div class="dropdown-content">
                     {
                         AllProjects.pages.map((post) => (
-                            <a href={post.glob}>{post.title}</a>
+                            <a class="handwriting" href={"/other/kids/tv/" + post.glob}>{post.title}</a>
                         ))
                     }
-                </div>
-            </li>
-            <li class="dropdown">
-                <a class="dropbtn" href="javascript:void(0)">
-                    Other fun stuff
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="currentColor"
-                        class="w-6 h-6"
-                        width="12px"
-                    >
-                        <path
-                            fill-rule="evenodd"
-                            d="M12.53 16.28a.75.75 0 01-1.06 0l-7.5-7.5a.75.75 0 011.06-1.06L12 14.69l6.97-6.97a.75.75 0 111.06 1.06l-7.5 7.5z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </a>
-                <div class="dropdown-content">
-                    <a href="/other/🐸">🐸</a>
-                    <a href="/other/privacypolicy">Privacy Policy</a>
-                    <a href="/other/kids/">MaebeeTV Kids</a>
                 </div>
             </li>
         </ul>
     </div>
 </nav>
+<svg class="drips" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill={primaryColour} fill-opacity="1" d="M0,64L24,64C48,64,96,64,144,69.3C192,75,240,85,288,112C336,139,384,181,432,213.3C480,245,528,267,576,272C624,277,672,267,720,224C768,181,816,107,864,85.3C912,64,960,96,1008,117.3C1056,139,1104,149,1152,176C1200,203,1248,245,1296,234.7C1344,224,1392,160,1416,128L1440,96L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z"></path></svg>

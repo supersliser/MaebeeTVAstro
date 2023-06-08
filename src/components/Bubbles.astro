@@ -1,0 +1,79 @@
+---
+import Particles from "astro-particles";
+import type { ISourceOptions } from "tsparticles-engine";
+
+const { color } = Astro.props;
+
+const options: ISourceOptions = {
+  preset: "bigCircles",
+  autoPlay: true,
+  background: {
+    color: "#090909",
+  },
+  fullScreen: {
+    enable: true,
+    zIndex: -1,
+  },
+  particles: {
+    color: {
+      value: color,
+    },
+  },
+};
+---
+
+<script>
+  import { tsParticles } from "tsparticles-engine";
+  import { loadBigCirclesPreset } from "tsparticles-preset-big-circles";
+
+  (async () => {
+    await loadBigCirclesPreset(tsParticles); // this is required only if you are not using the bundle script
+
+    await tsParticles.load("tsparticles", {
+      preset: "bigCircles", // also "big-circles" is accepted
+      autoPlay: true,
+      background: {
+        color: "#090909",
+      },
+      fullScreen: {
+        enable: true,
+        zIndex: -1,
+      },
+      particles: {
+        color: {
+          value: "#6a731c",
+        },
+        move: {
+          speed: {
+            max: 10,
+            min: 5,
+          }
+        },
+        opacity: {
+          value: 1,
+        },
+        size: {
+          value: {
+            max: 60,
+            min: 20,
+          }
+        },
+        number: {
+          limit: 50,
+
+        },
+        interactivity: {
+          detectsOn: "window",
+          events: {
+            onclick: {
+              enable: true,
+              mode: "remove",
+            }
+          }
+        }
+      },
+    });
+  })();
+</script>
+
+<Particles id="tsparticles" options={options}><slot /></Particles>

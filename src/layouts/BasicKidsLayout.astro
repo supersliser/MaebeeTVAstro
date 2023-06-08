@@ -1,21 +1,43 @@
 ---
-const { frontmatter } = Astro.props;
-import "../styles/basic.css";
+const { title, subtitle, PrimaryColor, NavTextColor } = Astro.props;
 import Nav from "../components/NavBarKids.astro";
 export const prerender = true;
+import Top from "../components/Top.astro";
+import "../styles/basicKids.css";
+import "../styles/kidsfonts.css";
+import "../styles/fonts.css";
+// const backgroundNumber = await Math.floor(Math.random() * 5) + 1;
+/* const background =
+	"../images/circle-scatter-haikei (" + backgroundNumber.toString() + ").svg"; */
+import Background from "../components/Bubbles.astro";
 ---
+
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="https://media.discordapp.net/attachments/903265431396179978/977713498090008606/MaebeeTV-logos.jpeg?width=810&height=810" />
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="https://cdn.discordapp.com/attachments/903258487872700520/1110100037825990746/MaebeeTVKids.png"
+		/>
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{frontmatter.title} - MaebeeTV Kids</title>
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3417864629803378"
-     crossorigin="anonymous"></script>
+		<title>{title} - MaebeeTV</title>
+		<script
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3417864629803378"
+			crossorigin="anonymous"
+		></script>
 	</head>
 	<body>
-		<Nav frontmatter = {frontmatter} />
-        <slot />
+		<Background color={PrimaryColor} />
+		<Nav PrimaryColor={PrimaryColor} NavTextColor={NavTextColor} />
+		<slot />
 	</body>
 </html>
+
+<!-- <style define:vars={{ background }}>
+	html {
+		background-image: url("../images/circle-scatter-haikei (1).svg");
+	}
+</style> -->

@@ -1,7 +1,6 @@
 ---
+import data from "../../content/projects.json";
 export async function getStaticPaths() {
-  const data = await fetch('https://api.npoint.io/610b9bb2a97b2e3a797f').then(response => response.json());
-
   return data.pages.map((post) => {
     return {
       params: { glob: post.glob },
