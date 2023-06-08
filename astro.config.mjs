@@ -13,7 +13,7 @@ export default defineConfig({
         "has": [
           {
             "type": "host",
-            "value": "maebeetv.kids.com"
+            "value": "https://maebee-tv-astro-git-makingkidssitenewdomain-maebee-tv.kids.vercel.app"
           }
         ],
         "destination": "/kids/"
