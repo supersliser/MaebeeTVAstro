@@ -1,0 +1,13 @@
+{
+  "pages": [
+    {
+      "title": "Cozies",
+      "subtitle": "Cozies",
+      "PrimaryColor": "#0084ff",
+      "NavTextColor": "#ffffff",
+      "link": "https://www.youtube.com/embed/PIL3nLSDVTU",
+      "text": "Cozies is a delightful children's book series that invites young readers on a cozy adventure filled with warmth, imagination, and heartwarming tales. Each book in this charming series is crafted to create a soothing and comforting experience, perfect for snuggling up with your little ones.",
+      "slug": "cozies"
+    }
+  ]
+}

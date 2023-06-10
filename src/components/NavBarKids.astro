@@ -3,12 +3,12 @@ const { PrimaryColor, NavTextColor } = Astro.props;
 const primaryColour = PrimaryColor;
 const textColour = NavTextColor;
 // import AllFilms from "../content/kids/films.json";
-import AllProjects from "../content/kids/tv.json";
+import AllProjects from "../pageData/kids/tv.json";
 // for (var i = 0; i < AllProjects.pages.length; i++) {
-//     AllProjects.pages[i].glob = "/kids/tv/" + AllProjects.pages[i].glob;
+//     AllProjects.pages[i].slug = "/kids/tv/" + AllProjects.pages[i].slug;
 // }
 // for (var i = 0; i < AllFilms.pages.length; i++) {
-//     AllFilms.pages[i].glob = "../kids/films/" + AllFilms.pages[i].glob;
+//     AllFilms.pages[i].slug = "../kids/films/" + AllFilms.pages[i].slug;
 // }
 ---
 
@@ -157,7 +157,7 @@ import AllProjects from "../content/kids/tv.json";
                 <div class="dropdown-content">
                     {
                         AllFilms.pages.map((post) => (
-                            <a class="handwriting" href={post.glob}>{post.title}</a>
+                            <a class="handwriting" href={post.slug}>{post.title}</a>
                         ))
                     }
                 </div>
@@ -181,7 +181,7 @@ import AllProjects from "../content/kids/tv.json";
                 <div class="dropdown-content">
                     {
                         AllProjects.pages.map((post) => (
-                            <a class="handwriting" href={"/other/kids/tv/" + post.glob}>{post.title}</a>
+                            <a class="handwriting" href={"/other/kids/tv/" + post.slug}>{post.title}</a>
                         ))
                     }
                 </div>

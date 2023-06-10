@@ -2,18 +2,15 @@
 const { PrimaryColor, NavTextColor } = Astro.props;
 const primaryColour = PrimaryColor;
 const textColour = NavTextColor;
-const AllFilms = await fetch("https://api.npoint.io/f2948809e44e0dab1ee3").then(
-    (response) => response.json()
-);
-const AllProjects = await fetch(
-    "https://api.npoint.io/610b9bb2a97b2e3a797f"
-).then((response) => response.json());
-for (var i = 0; i < AllProjects.pages.length; i++) {
-    AllProjects.pages[i].glob = "../projects/" + AllProjects.pages[i].glob;
-}
-for (var i = 0; i < AllFilms.pages.length; i++) {
-    AllFilms.pages[i].glob = "../films/" + AllFilms.pages[i].glob;
-}
+
+import AllFilms from "../pageData/selfHatred/films.json";
+import AllProjects from "../pageData/selfHatred/projects.json";
+// for (var i = 0; i < AllProjects.pages.length; i++) {
+//     AllProjects.pages[i].slug = "/projects/" + AllProjects.pages[i].slug;
+// }
+// for (var i = 0; i < AllFilms.pages.length; i++) {
+//     AllFilms.pages[i].slug = "/films/" + AllFilms.pages[i].slug;
+// }
 ---
 
 <style define:vars={{ primaryColour, textColour }}>
@@ -156,7 +153,7 @@ for (var i = 0; i < AllFilms.pages.length; i++) {
                 <div class="dropdown-content">
                     {
                         AllFilms.pages.map((post) => (
-                            <a href={post.glob}>{post.title}</a>
+                            <a href={"/films/" + post.slug}>{post.title}</a>
                         ))
                     }
                 </div>
@@ -180,7 +177,7 @@ for (var i = 0; i < AllFilms.pages.length; i++) {
                 <div class="dropdown-content">
                     {
                         AllProjects.pages.map((post) => (
-                            <a href={post.glob}>{post.title}</a>
+                            <a href={"/projects/" + post.slug}>{post.title}</a>
                         ))
                     }
                 </div>

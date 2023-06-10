@@ -1,0 +1,45 @@
+---
+import BasicLayout from "../../../layouts/BasicKidsLayout.astro";
+const title = "Home";
+const subtitle = "Changing the world, one story at a time";
+const PrimaryColor = "#fffb0d";
+const NavTextColor = "#000000";
+import "../../../styles/basicKids.css";
+import "../../../styles/kidsfonts.css";
+import "../../../styles/fonts.css";
+---
+
+<BasicLayout
+	title={title}
+	subtitle={subtitle}
+	PrimaryColor={PrimaryColor}
+	NavTextColor={NavTextColor}
+>
+	<div class="vertical main marginTop">
+		<div class="horizontal">
+			<div class="double">
+				<img
+					src="https://cdn.discordapp.com/attachments/903258487872700520/1110100037825990746/MaebeeTVKids.png"
+					alt="The MaebeeTV logo."
+					width="400px"
+					height="400px"
+				/>
+			</div>
+			<div class="vertical double">
+				<h1 class="sans">Welcome to MaebeeTVKids!!!</h1>
+				<p class="sans">
+					We're a magical movie-making crew that loves to make stories come to life in the most amazing and fun ways ever!
+				</p>
+			</div>
+		</div>
+		<div class="marginTop" />
+		<div class="marginTop" />
+	</div>
+</BasicLayout>
+<style>
+	iframe {
+		width: 60%;
+		height: 120vh;
+		border: none;
+	}
+</style>
