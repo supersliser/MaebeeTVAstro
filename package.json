@@ -15,7 +15,7 @@
     "@fontsource-variable/brygada-1918": "^5.0.4",
     "@fontsource/actor": "^5.0.3",
     "@fontsource/caveat-brush": "^5.0.3",
-    "astro": "^2.6.2",
+    "astro": "^2.6.3",
     "astro-particles": "^2.9.3",
     "tsparticles-preset-big-circles": "^2.10.1"
   }
